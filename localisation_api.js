@@ -3,7 +3,6 @@ $(document).ready(function() {
     const ua = navigator.userAgent
     const device = {
       iPhone: /iPhone/.test(ua),
-      Linux: /Linux/.test(ua)
     }
     console.log(device);
 
