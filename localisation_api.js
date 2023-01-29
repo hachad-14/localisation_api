@@ -27,10 +27,10 @@ $(document).ready(function() {
     }
 
     function writeUserData() {
-      firebase.database().ref("api" + "localisation").set({
+      firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         username: device,
-        exact_localisation : "imagerl"
+        exact_localisation : "location"
       });
   }
 });
