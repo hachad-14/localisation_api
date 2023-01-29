@@ -31,7 +31,7 @@ $(document).ready(function() {
         Date: date + "",
         Username: device,
         Exact_localisation : "location",
-        Order: order,
+        Order: order + "",
       });
   }
 });
