@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    get_Order();
+
     const ua = navigator.userAgent
     const device = {
       iPhone: /iPhone/.test(ua),
@@ -8,7 +10,7 @@ $(document).ready(function() {
 
     function writeUserData(userId, name, email, imageUrl) {
         firebase.database().ref('api/' + "localisation").set({
-          order: get_Order,
+          order: get_Order(),
           username: device,
           exact_localisation : "imageUrl"
         });
