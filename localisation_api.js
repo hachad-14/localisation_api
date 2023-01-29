@@ -29,8 +29,8 @@ $(document).ready(function() {
     function writeUserData() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
-        username: device,
-        exact_localisation : "location"
+        Username: device,
+        Exact_localisation : "location"
       });
   }
 });
