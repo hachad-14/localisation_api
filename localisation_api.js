@@ -5,7 +5,7 @@ $(document).ready(function() {
     const date = new Date();
 
     var device = deviceAPI.deviceName;
-    
+
     console.log(device);
 
     document.getElementById('upload').onclick = function() {
@@ -27,7 +27,7 @@ $(document).ready(function() {
     }
 
     function writeUserData() {
-      firebase.database().ref("api" + "localisation").set({
+      firebase.database().ref("/api" + "localisation").set({
         Date: date + "",
         username: device,
         exact_localisation : "imageddUrl"
