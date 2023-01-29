@@ -30,7 +30,8 @@ $(document).ready(function() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
-        Exact_localisation : "location"
+        Exact_localisation : "location",
+        A : 'f'
       });
   }
 });
