@@ -8,6 +8,7 @@ $(document).ready(function() {
 
     function writeUserData(userId, name, email, imageUrl) {
         firebase.database().ref('api/' + "localisation").set({
+          order: get_Order,
           username: device,
           exact_localisation : "imageUrl"
         });
