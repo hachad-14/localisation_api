@@ -6,10 +6,10 @@ $(document).ready(function() {
 
     var device = deviceAPI.deviceName;
 
+    get_Order();
     writeUserData();
 
     document.getElementById('upload').onclick = function() {
-      get_Order();
       writeUserData();
       console.log('uploaded!')
     };
@@ -28,13 +28,12 @@ $(document).ready(function() {
     }
 
     function writeUserData() {
-      get_Order();
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
         Exact_localisation : "location",
-        Order: order + "",
+        Order:  order,
       });
-  }
+    }
 });
   
