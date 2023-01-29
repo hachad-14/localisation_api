@@ -1,20 +1,12 @@
 $(document).ready(function() {
 
-    get_Order();
 
-    const ua = navigator.userAgent
-    const device = {
-      iPhone: /iPhone/.test(ua),
-    }
+    var order;
+    const date = new Date();
+
+    var device = deviceAPI.deviceName;
+    
     console.log(device);
-
-    function writeUserData(userId, name, email, imageUrl) {
-        firebase.database().ref('api/' + "localisation").set({
-          order: get_Order(),
-          username: device,
-          exact_localisation : "imageUrl"
-        });
-    }
 
     document.getElementById('upload').onclick = function() {
         writeUserData();
@@ -33,5 +25,13 @@ $(document).ready(function() {
         })
       }
     }
+
+    function writeUserData() {
+      firebase.database().ref("api" + "localisation").set({
+        Date: date + "",
+        username: device,
+        exact_localisation : "imageddUrl"
+      });
+  }
 });
   
