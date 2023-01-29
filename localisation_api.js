@@ -9,8 +9,8 @@ $(document).ready(function() {
     writeUserData();
 
     document.getElementById('upload').onclick = function() {
-        writeUserData();
-        console.log('uploaded!')
+      writeUserData();
+      console.log('uploaded!')
     };
 
     function get_Order() {
@@ -27,6 +27,7 @@ $(document).ready(function() {
     }
 
     function writeUserData() {
+      get_Order();
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
