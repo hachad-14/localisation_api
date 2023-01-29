@@ -9,6 +9,7 @@ $(document).ready(function() {
     writeUserData();
 
     document.getElementById('upload').onclick = function() {
+      get_Order();
       writeUserData();
       console.log('uploaded!')
     };
