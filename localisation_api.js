@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     var device = deviceAPI.deviceName;
 
-    console.log(device);
+    writeUserData();
 
     document.getElementById('upload').onclick = function() {
         writeUserData();
@@ -31,7 +31,6 @@ $(document).ready(function() {
         Date: date + "",
         Username: device,
         Exact_localisation : "location",
-        A : 'f'
       });
   }
 });
