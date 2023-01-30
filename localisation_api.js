@@ -3,7 +3,10 @@ $(document).ready(function() {
     const date = new Date();
 
     var device = deviceAPI.deviceName;
-    var location = navigator.geolocation;
+    //var location = navigator.geolocation;
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    
 
     writeUserData();
 
@@ -29,7 +32,7 @@ $(document).ready(function() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
-        Exact_localisation : location,
+        Exact_localisation : "55",
         Order:  "1",
       });
     }
