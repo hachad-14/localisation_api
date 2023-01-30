@@ -3,18 +3,14 @@ $(document).ready(function() {
     const date = new Date();
     var device = deviceAPI.deviceName;
 
-    const successCallback = (position) => {
-      document.getElementById("console").innerHTML(position + "sucess");
-      alert('d');
-    };
-    const errorCallback = (error) => {
-      document.getElementById("console").innerHTML(error + "error");
-      alert('deee');
-    };
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
+    locate();
     writeUserData();
-
+    
+    function locate() {
+      const position = navigator.geolocation.getCurrentPosition();
+      alert(position);
+    }
     document.getElementById('upload').onclick = function() {
       writeUserData();
       console.log('uploaded!');
