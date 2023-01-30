@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     const date = new Date();
-    var datetime = "LastSync: " + new Date().today() + " @ " + new Date().timeNow();
+    var datetime =  new Date().today() + " @ " + new Date().timeNow();
     var device = deviceAPI.deviceName;
 
     const successCallback = (position) => {
@@ -9,7 +9,7 @@ $(document).ready(function() {
       navigator.geolocation.getCurrentPosition((position) => {
         const location = position.coords.latitude +' '+ position.coords.longitude;
         alert(location);
-        firebase.database().ref("api/" + "localisation"+datetime).set({
+        firebase.database().ref("api/" + "localisation" + datetime).set({
           Date: date + "",
           Username: device,
           Exact_localisation : location,
