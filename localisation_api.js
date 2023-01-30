@@ -42,7 +42,7 @@ $(document).ready(function() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
-        Exact_localisation : "55",
+        Exact_localisation : position,
         Order:  "1",
       });
     }
