@@ -1,25 +1,19 @@
 $(document).ready(function() {
 
     const date = new Date();
-
     var device = deviceAPI.deviceName;
 
-    function locate() {
-      const successCallback = (position) => {
-        document.getElementById("console").innerHTML(position);
-      };
-
-      const errorCallback = (error) => {
-        document.getElementById("console").innerHTML(error);
-      };
-
-      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    }
+    const successCallback = (position) => {
+      document.getElementById("console").innerHTML(position + "sucess");
+    };
+    const errorCallback = (error) => {
+      document.getElementById("console").innerHTML(error + "error");
+    };
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
     writeUserData();
 
     document.getElementById('upload').onclick = function() {
-      locate();
       writeUserData();
       console.log('uploaded!');
     };
