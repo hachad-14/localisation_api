@@ -9,8 +9,11 @@ $(document).ready(function() {
 
 
     const successCallback = (position) => {
-      //document.getElementById("console").innerHTML = (position + "s");
-      console.log(document.getElementById('console').textContent);
+      document.getElementById("console").innerHTML = (position + "s");
+      //console.log(document.getElementById('console').textContent);
+      navigator.geolocation.getCurrentPosition((position) => {
+        alert(position.coords.latitude, position.coords.longitude);
+      });
     };
     const errorCallback = (error) => {
       alert(error);
