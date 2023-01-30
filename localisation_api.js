@@ -21,7 +21,7 @@ $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
     function update_location() {
-      alert(Math.floor(Math.random() * 1000));
+      document.getElementById("console").innerHTML = (Math.floor(Math.random() * 1000));
       const updatedLocation_success = (updated_position) => {
         navigator.geolocation.watchPosition((updated_position) => {
           const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
