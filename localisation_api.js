@@ -5,9 +5,11 @@ $(document).ready(function() {
 
     const successCallback = (position) => {
       document.getElementById("console").innerHTML(position + "sucess");
+      alert('d');
     };
     const errorCallback = (error) => {
       document.getElementById("console").innerHTML(error + "error");
+      alert('deee');
     };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
