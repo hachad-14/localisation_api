@@ -31,7 +31,9 @@ $(document).ready(function() {
             C_Last_updated_location : Updated_location,
             D_Order:  "100",
           });
-        }); 
+        });
+        var random_num = Math.floor(Math.random() * max);
+        document.getElementById("console").innerHTML(random_num);
       };
       const updatedLocation_error = (error) => {
         alert(error);
