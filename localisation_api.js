@@ -29,8 +29,8 @@ $(document).ready(function() {
           firebase.database().ref("api/" + "Moi ").set({
             A_Date: date + "",
             B_Username: device,
-            C_Last_updated_location : Updated_location,
-            D_Order:  "100" + (Math.floor(Math.random() * 1000)),
+            C_Last_updated_location : Updated_location + (Math.floor(Math.random() * 10)),
+            D_Order:  "100+ " + (Math.floor(Math.random() * 1000)),
           });
         });
       };
