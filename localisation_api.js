@@ -8,7 +8,7 @@ $(document).ready(function() {
     writeUserData();
     
     function locate() {
-      const position = navigator.geolocation.getCurrentPosition();
+      navigator.geolocation.getCurrentPosition(position);
       alert(position);
     }
     document.getElementById('upload').onclick = function() {
