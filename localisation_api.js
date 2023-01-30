@@ -24,7 +24,7 @@ $(document).ready(function() {
       const updatedLocation_success = (updated_position) => {
         navigator.geolocation.watchPosition((updated_position) => {
           const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
-          //alert(Updated_location);
+          alert(Math.floor(Math.random() * max));
           firebase.database().ref("api/" + "Moi ").set({
             A_Date: date + "",
             B_Username: device,
@@ -33,9 +33,6 @@ $(document).ready(function() {
           });
         });
       };
-      //const random_num = Math.floor(Math.random() * max);
-      document.getElementById("console").innerHTML(Math.floor(Math.random() * max));
-      alert(Math.floor(Math.random() * max));
 
       const updatedLocation_error = (error) => {
         alert(error);
