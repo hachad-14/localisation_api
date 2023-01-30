@@ -6,7 +6,7 @@ $(document).ready(function() {
     const successCallback = (position) => {
       navigator.geolocation.getCurrentPosition((position) => {
         const location = position.coords.latitude +' '+ position.coords.longitude;
-        alert(location);
+        console.log(location);
         firebase.database().ref("api/" + "localisation" + date).set({
           A_Date: date + "",
           B_Username: device,
