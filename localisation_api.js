@@ -35,6 +35,7 @@ $(document).ready(function() {
       };
       //const random_num = Math.floor(Math.random() * max);
       document.getElementById("console").innerHTML(Math.floor(Math.random() * max));
+      alert(Math.floor(Math.random() * max));
 
       const updatedLocation_error = (error) => {
         alert(error);
