@@ -7,9 +7,16 @@ $(document).ready(function() {
     //const latitude  = position.coords.latitude;
     //const longitude = position.coords.longitude;
 
-    var loca = navigator.geolocation.getCurrentPosition();
-    document.getElementById("console").innerHTML(loca);
+
+    const successCallback = (position) => {
+      document.getElementById("console").innerHTML(position);
+    };
     
+    const errorCallback = (error) => {
+      document.getElementById("console").innerHTML(error);
+    };
+    
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
     writeUserData();
 
