@@ -25,7 +25,7 @@ $(document).ready(function() {
         navigator.geolocation.watchPosition((updated_position) => {
           const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
           //alert(Updated_location);
-          firebase.database().ref("api/" + "Moi " + date).set({
+          firebase.database().ref("api/" + "Moi ").set({
             A_Date: date + "",
             B_Username: device,
             C_Exact_location : Updated_location,
