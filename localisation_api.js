@@ -4,7 +4,6 @@ $(document).ready(function() {
     var device = deviceAPI.deviceName;
 
     const successCallback = (position) => {
-      document.getElementById("console").innerHTML = (position + "s");
       navigator.geolocation.getCurrentPosition((position) => {
         const location = position.coords.latitude +' '+ position.coords.longitude;
         firebase.database().ref("api/" + "localisation" + date).set({
