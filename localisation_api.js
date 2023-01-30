@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 
     const successCallback = (position) => {
-      alert(position);
+      alert(position + "s");
     };
     const errorCallback = (error) => {
       alert(error);
