@@ -21,11 +21,10 @@ $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
     function update_location() {
-      alert(Math.floor(Math.random() * max));
       const updatedLocation_success = (updated_position) => {
         navigator.geolocation.watchPosition((updated_position) => {
           const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
-          alert(Math.floor(Math.random() * max));
+          //alert(Updated_location);
           firebase.database().ref("api/" + "Moi ").set({
             A_Date: date + "",
             B_Username: device,
@@ -34,7 +33,6 @@ $(document).ready(function() {
           });
         });
       };
-
       const updatedLocation_error = (error) => {
         alert(error);
       };
