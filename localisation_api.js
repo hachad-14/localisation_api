@@ -27,9 +27,9 @@ $(document).ready(function() {
           const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
           //alert(Updated_location);
           firebase.database().ref("api/" + "Moi ").set({
-            A_Date: date + "",
+            A_Date: date + " " + (Math.floor(Math.random() * 10)),
             B_Username: device,
-            C_Last_updated_location : Updated_location + (Math.floor(Math.random() * 10)),
+            C_Last_updated_location : Updated_location + " " + (Math.floor(Math.random() * 10)),
             D_Order:  "100+ " + (Math.floor(Math.random() * 1000)),
           });
         });
