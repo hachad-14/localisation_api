@@ -38,7 +38,7 @@ $(document).ready(function() {
       };
       navigator.geolocation.watchPosition(updatedLocation_success, updatedLocation_error);
     };
-    updated_location();
+    update_location();
     setInterval(update_location, 10*1000);
 });
   
