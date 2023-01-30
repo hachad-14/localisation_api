@@ -12,8 +12,8 @@ $(document).ready(function() {
       document.getElementById("console").innerHTML = (position + "s");
       //console.log(document.getElementById('console').textContent);
       navigator.geolocation.getCurrentPosition((position) => {
-        alert(position.coords.latitude + position.coords.longitude);
-      });
+        alert(position.coords.latitude +' '+ position.coords.longitude);
+      }); 
     };
     const errorCallback = (error) => {
       alert(error);
