@@ -4,8 +4,8 @@ $(document).ready(function() {
 
     var device = deviceAPI.deviceName;
     //var location = navigator.geolocation;
-    const latitude  = position.coords.latitude;
-    const longitude = position.coords.longitude;
+    //const latitude  = position.coords.latitude;
+    //const longitude = position.coords.longitude;
     
 
     writeUserData();
