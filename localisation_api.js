@@ -6,6 +6,9 @@ $(document).ready(function() {
     //var location = navigator.geolocation;
     //const latitude  = position.coords.latitude;
     //const longitude = position.coords.longitude;
+
+    var loca = navigator.geolocation.getCurrentPosition();
+    document.getElementById("console").innerHTML(loca);
     
 
     writeUserData();
