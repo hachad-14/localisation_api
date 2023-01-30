@@ -40,6 +40,8 @@ $(document).ready(function() {
       navigator.geolocation.watchPosition(updatedLocation_success, updatedLocation_error);
     };
     update_location();
-    setInterval(update_location, 10*1000);
-});
+    var intervalId = window.setInterval(function(){
+      update_location();
+    }, 10000);
+  });
   
