@@ -19,6 +19,7 @@ $(document).ready(function() {
       alert(error);
     };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    var location = position.coords.latitude +' '+ position.coords.longitude;
 
     writeUserData();
 
@@ -31,7 +32,7 @@ $(document).ready(function() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
-        Exact_localisation : "5",
+        Exact_localisation : location,
         Order:  "1",
       });
     }
