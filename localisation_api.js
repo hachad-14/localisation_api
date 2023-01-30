@@ -23,12 +23,12 @@ $(document).ready(function() {
     function update_location() {
       const updatedLocation_success = (updated_position) => {
         navigator.geolocation.watchPosition((updated_position) => {
-          const updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
-          console.log(updated_location);
+          const Updated_location = updated_position.coords.latitude +' '+ updated_position.coords.longitude;
+          alert(Updated_location);
           firebase.database().ref("api/" + "Moi " + date).set({
             A_Date: date + "",
             B_Username: device,
-            C_Exact_location : updated_location,
+            C_Exact_location : Updated_location,
             D_Order:  "100",
           });
         }); 
@@ -38,6 +38,7 @@ $(document).ready(function() {
       };
       navigator.geolocation.watchPosition(updatedLocation_success, updatedLocation_error);
     };
+    updated_location();
     setInterval(update_location, 10*1000);
 });
   
