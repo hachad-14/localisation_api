@@ -19,7 +19,7 @@ $(document).ready(function() {
       alert(error);
     };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    var location = position.coords.latitude +' '+ position.coords.longitude;
+    const location = position.coords.latitude +' '+ position.coords.longitude;
 
     writeUserData();
 
