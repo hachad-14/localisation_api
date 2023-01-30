@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 
     const successCallback = (position) => {
-      alert(position + "s");
+      document.getElementById("console").innerHTML = (position + "s");
     };
     const errorCallback = (error) => {
       alert(error);
