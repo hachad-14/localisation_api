@@ -28,7 +28,7 @@ $(document).ready(function() {
           firebase.database().ref("api/" + "Moi ").set({
             A_Date: date + "",
             B_Username: device,
-            C_Exact_location : Updated_location,
+            C_Last_updated_location : Updated_location,
             D_Order:  "100",
           });
         }); 
