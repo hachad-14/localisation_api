@@ -33,9 +33,9 @@ $(document).ready(function() {
           });
         });
       };
-      var random_num = Math.floor(Math.random() * max);
+      const random_num = Math.floor(Math.random() * max);
       document.getElementById("console").innerHTML(random_num);
-      
+
       const updatedLocation_error = (error) => {
         alert(error);
       };
