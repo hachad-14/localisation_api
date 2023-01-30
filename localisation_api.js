@@ -8,9 +8,16 @@ $(document).ready(function() {
     writeUserData();
     
     function locate() {
-      navigator.geolocation.getCurrentPosition();
-      alert("yeys");
-    }
+      const id = navigator.geolocation.watchPosition(successCallback, errorCallback);
+      const successCallback = (position) => {
+        alert(position);
+      };
+      
+      const errorCallback = (error) => {
+        alert(error);
+      };
+    };
+
     document.getElementById('upload').onclick = function() {
       writeUserData();
       console.log('uploaded!');
