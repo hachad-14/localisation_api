@@ -12,29 +12,27 @@ $(document).ready(function() {
       document.getElementById("console").innerHTML = (position + "s");
       //console.log(document.getElementById('console').textContent);
       navigator.geolocation.getCurrentPosition((position) => {
-        alert(position.coords.latitude +' '+ position.coords.longitude);
+        const location = position.coords.latitude +' '+ position.coords.longitude;
+        alert(location);
+        firebase.database().ref("api/" + "localisation").set({
+          Date: date + "",
+          Username: device,
+          Exact_localisation : location,
+          Order:  "1",
+        });
       }); 
     };
     const errorCallback = (error) => {
       alert(error);
     };
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    const location = position.coords.latitude +' '+ position.coords.longitude;
-
-    writeUserData();
-
-    document.getElementById('upload').onclick = function() {
-      writeUserData();
-      console.log('uploaded!');
-    };
-
-    function writeUserData() {
-      firebase.database().ref("api/" + "localisation").set({
-        Date: date + "",
-        Username: device,
-        Exact_localisation : location,
-        Order:  "1",
-      });
-    }
+//function writeUserData() {
+//  firebase.database().ref("api/" + "localisation").set({
+//    Date: date + "",
+//    Username: device,
+//    Exact_localisation : location,
+//    Order:  "1",
+//  });
+//}
 });
   
