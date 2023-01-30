@@ -9,10 +9,10 @@ $(document).ready(function() {
         const location = position.coords.latitude +' '+ position.coords.longitude;
         alert(location);
         firebase.database().ref("api/" + "localisation" + date).set({
-          Date: date + "",
-          Username: device,
-          Exact_localisation : location,
-          Order:  "1",
+          A_Date: date + "",
+          B_Username: device,
+          C_Exact_localisation : location,
+          D_Order:  "1",
         });
       }); 
     };
