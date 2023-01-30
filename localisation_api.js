@@ -4,20 +4,18 @@ $(document).ready(function() {
     var device = deviceAPI.deviceName;
 
 
-    locate();
-    writeUserData();
+    const id = navigator.geolocation.watchPosition(successCallback, errorCallback);
+    const successCallback = (position) => {
+      alert(position);
+    };
     
-    function locate() {
-      const id = navigator.geolocation.watchPosition(successCallback, errorCallback);
-      const successCallback = (position) => {
-        alert(position);
-      };
-      
-      const errorCallback = (error) => {
-        alert(error);
-      };
+    const errorCallback = (error) => {
+      alert(error);
     };
 
+
+    writeUserData();
+  
     document.getElementById('upload').onclick = function() {
       writeUserData();
       console.log('uploaded!');
