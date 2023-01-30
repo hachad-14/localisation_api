@@ -42,6 +42,6 @@ $(document).ready(function() {
     update_location();
     var intervalId = window.setInterval(function(){
       update_location();
-    }, 10000);
+    }, 10 * 1000);
   });
   
