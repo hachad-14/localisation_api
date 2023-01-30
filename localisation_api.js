@@ -1,16 +1,15 @@
 $(document).ready(function() {
 
-
-    var order;
     const date = new Date();
 
     var device = deviceAPI.deviceName;
+    var location = navigator.geolocation;
 
     writeUserData();
 
     document.getElementById('upload').onclick = function() {
       writeUserData();
-      console.log('uploaded!')
+      console.log('uploaded!');
     };
 
     function get_Order() {
@@ -30,7 +29,7 @@ $(document).ready(function() {
       firebase.database().ref("api/" + "localisation").set({
         Date: date + "",
         Username: device,
-        Exact_localisation : "location",
+        Exact_localisation : location,
         Order:  "1",
       });
     }
